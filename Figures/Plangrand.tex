@@ -1,0 +1,39 @@
+	\begin{tikzpicture}[scale=3,tdplot_main_coords]
+	
+	% Axes 3D
+	\draw[->] (-1,0,0) -- (2,0,0) node[right] {$x$};
+	\draw[->] (0,-0.5,0) -- (0,2,0) node[right] {$y$};
+	\draw[->] (0,0,-0.5) -- (0,0,2) node[above] {$z$};
+	
+	% Graduations principales
+	\foreach \x in {1}
+	{
+		\draw[dotted] (\x,0,0) -- (\x,0,\x);
+		\draw[dotted] (\x,0,\x) -- (0,0,\x);
+		\draw (\x,0,0) node[below] {$\x$};
+		\draw (0,\x,0) node[below] {$\x$};
+		\draw (0,0,\x) node[left] {$\x$};
+	}
+	
+	% Plan vectoriel recentré et élargi
+	\draw[green!30, fill=green!10, opacity=0.5] 
+	(0,-0.2,-0.2) --    % coin inférieur gauche
+	(2.2,1.2,1.2) --     % coin supérieur droit
+	(1.2,2,2) --         % coin supérieur
+	(-1.5,1.0,1.0) --      % coin inférieur
+	cycle;
+	
+	% Extension du plan (lignes de niveau réorganisées)
+	\draw[dashed, green!50] (-1.5,0.4,0.4) -- (2.2,0.4,0.4);
+	\draw[dashed, green!50] (-1.5,0.8,0.8) -- (2.2,0.8,0.8);
+	\draw[dashed, green!50] (-1.5,1.2,1.2) -- (2.2,1.2,1.2);
+	\draw[dashed, green!50] (0.2,1.6,1.6) -- (2.0,1.6,1.6);  % Ligne encore plus à droite
+	\draw[dashed, green!50] (0.6,2.0,2.0) -- (1.6,2.0,2.0);  % Ligne encore plus à droite
+	
+	% Les deux vecteurs générateurs
+	\draw[->, red, thick] (0,0,0) -- (1,1,1) node[above right] {$\vec{u_1}(1,1,1)$};
+	\draw[->, blue, thick] (0,0,0) -- (-1,1,1) node[above left=-6pt] {$\vec{u_2}(-1,1,1)$};
+	
+	% Étiquette du plan
+	\node[above = 8pt] at (0.6,1.7,1.7) {$\textcolor{vertfoncé}{\textup{Vect}(\vec{u_1},\vec{u_2})}$};
+\end{tikzpicture}

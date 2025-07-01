@@ -1,0 +1,23 @@
+# Fichiers LaTeX temporaires
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Fichiers compilés
+#*.pdf  # Enlève cette ligne si tu veux versionner le PDF

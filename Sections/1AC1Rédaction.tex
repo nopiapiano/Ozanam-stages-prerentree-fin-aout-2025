@@ -1,0 +1,234 @@
+%%%                         Louis-Thibault GAUTHIER                       %%%
+
+
+
+\section{Rédaction}
+
+\subsection{Notations}
+
+
+Dans tout le stage, on utilise les notations usuelles ci-après : 	
+\begin{enumerate}
+	\item $\textcolor{gold2}{\NN}$ est l’ensemble des nombres entiers naturels,  $\NN^*$ l’ensemble des nombres entiers naturels non nuls, c'est à dire $\geq 1$.
+	
+	\item $\textcolor{gold2}{\ZZ}$ est l’ensemble des nombres entiers relatifs.
+	
+	\item $\textcolor{gold2}{\QQ}$ est l’ensemble des nombres rationnels, c’est-à-dire des fractions :
+	\[
+		\frac{p}{q}, \quad p \in \ZZ, q \in \NN^*
+	\]
+	
+	\item $\textcolor{gold2}{\RR}$ est l'ensemble des nombres réels, $\textcolor{gold2}{\RR^*}$ l'ensemble des nombres réels non nuls. $\textcolor{gold2}{\RR_+}$ l'ensemble des nombres réels positifs ou nuls, $\textcolor{gold2}{\RR_+^*}$ l'ensemble des nombres réels strictement positifs.
+	
+	\item $\textcolor{gold2}{\CC}$  (en CPGE Ingé seulement) est l'ensemble des nombres complexes, $\CC^*$ l'ensemble des nombres complexes non nuls.
+\end{enumerate}
+
+On a les inclusions : 
+\[
+	\NN \subset \ZZ \subset \QQ \subset \RR \subset \CC 
+\]
+Les nombres réels non rationnels sont dits \textbf{\textcolor{gold2}{irrationnels}}.
+
+	
+\Def
+{
+	Soit $a,b \in \ZZ$, on appelle \textcolor{gold2}{$\llbracket a, b \rrbracket$} l'ensemble des entiers entre $a$ et $b$. Par exemple :
+	\[ 
+		\llbracket 0, 3 \rrbracket = \{0,1,2,3\}\footnotemark
+	\]
+}
+\footnotetext{Nous donnerons une vision (approximative) de  ce qu'est un ensemble dans le deuxième cours.}
+
+\subsection{Vocabulaire}
+
+
+\Def[(Segments de $\RR$)]
+{
+	soit $a$ et $b$ deux nombres réels, on note indifféremment $[a,b]$ ou $[b,a]$ l'ensemble des réels compris, au sens large, entre $a$ et $b$. \\
+	Exemples :
+	\[
+		[-1, 4] = \{x\in \RR \vert -1 \leq x \leq 4 \}
+	\]
+	Les ensembles de la forme $[a,b]$ sont appelés \textbf{\textcolor{gold2}{segments de $\RR$}}.
+}
+
+\Def[(Partie entière d'un nombre réel)]
+{
+	La \textbf{\textcolor{gold2}{partie entière}} d'un réel $x$, notée $\lfloor x  \rfloor$ désigne le plus grand entier relatif plus petit que $x$. Autrement dit, $\lfloor x  \rfloor$  appartient à $\ZZ$ et vérifie : 
+	\[
+		\lfloor x  \rfloor	\leq x < \lfloor x  \rfloor	 +1		
+	\]
+}
+\example 
+	Donnons les valeurs des parties entière suivantes :
+
+	\vskip5pt
+
+	\[ 
+		\lfloor 4,2  \rfloor = \hspace{1.5cm}	\lfloor 2  \rfloor =		\hspace{1.5cm}		\lfloor -6.4  \rfloor	=
+	\]
+	
+\vskip10pt
+
+\subsection{Limites}
+
+\Def[(Limites)]
+{
+	On appelle \og droite numérique achevée \fg, que l'on note $\textcolor{gold2}{\overline{\RR}}$, l'ensemble :
+	\[
+		\overline{\RR} := \RR \cup \{- \infty, + \infty\}
+	\]
+	Pour $a,b$ dans $\overline{\RR}$, la notations :
+	\[
+		\underset{x \to a}{\textup{lim }} f(x)= b
+	\]
+	est source de mauvaise rédaction, car elle suppose à priori l'existence d'une limite. Il vaut mieux écrire, surtout lorsqu'on fait un calcul :
+	\[
+		f(x) \underset{x \to a}{\longrightarrow} b
+	\]
+}
+
+
+
+\Rem
+{
+	Pour une suite $(u_n)_{n\in \NN}$, \og $n$ ne peut tendre que vers $+\infty$ \fg. On écrit :
+	\[
+		u_n  \underset{n \infty}{\longrightarrow} l
+	\]
+}
+
+Nous allons voir, et commenter la définition très précise de la notion de limite d'une suite réelle, puis vous  étudierez dans le cours de première année celle de la limite d'une fonction réelle à variable réelle. En CPGE ingé, vous les manipulerez en exercices, moins en ECG.
+
+\newpage
+
+\example 
+	On illustre la définition précédente avec les limites des fonctions suivantes en $+\infty$ :  
+	\[
+		f(x) = \frac{1}{x-1} +2, \quad g(x) = \frac{\sqrt{x}+2-3x}{x}
+	\]
+	Et des suites : 
+	\[
+		u_n = \frac{n^2-1}{n+1}, \quad v_n = \frac{1-n^3}{n-5n^3}
+	\] 
+
+\subsection{Quantificateurs}
+
+
+La rédaction mathématique obéit à des règles précises qui doivent être rapidement maîtrisées. Voici les plus importantes : 
+\begin{enumerate}
+	\item Un objet mathématique est déclaré avant d’être utilisé, en général par le terme \og soit \fg ; la déclaration précise la nature de l’objet (exemples : \og soit $\overrightarrow{v}$ un vecteur non nul \fg, \og soit $z$ un nombre complexe non réel \fg, \og soit $n$ un  élément de $\NN^*$\fg ...).
+	
+	\item Un discours mathématique n’est pas une suite de symboles. L’argumentation est, pour l’essentiel, rédigée en langage français ordinaire (et correct), avec des phrases complètes. Sans abréviations. En particulier, les quantificateurs et les symboles d’implication $\rightarrow$ et d’équivalence $\Leftrightarrow$, utiles pour  énoncer de manière précise et concise des propriétés, ne doivent pas être employés comme des abréviations à l’intérieur du discours.
+	
+	\item Il est bon d’annoncer ce que l’on va faire, par des locutions du type \og Montrons que \fg.
+\end{enumerate}
+
+Bien rédiger s’acquiert essentiellement par l’usage; les exemples présentés dans la suite devraient vous donner une idée de ce qui est attendu.
+
+
+
+Les quantificateurs sont évoqués dans le programme de Terminale sans que les notations les concernant ne soient exigibles. Précisons ces notations, dont l’emploi est très commode et que nous utiliserons dans la suite : 
+
+\Def[(Quantificateurs et assertions)]
+{
+	\label{Defassertion}
+	Soit $P(x)$ une propriété, qui peut être vraie, ou fausse, et dépendant d'un paramètre $x$, où $x$ est un élément d'un ensemble $E$. 
+	
+	\begin{itemize}
+		\item \textcolor{gold2}{\textbf{Quantificateur universel :}} Pour signifier que la propriété $P(x)$ est vraie pour tous les éléments $x$ de $E$, on écrit :
+		
+		\[
+			\forall x \in E, P(x)
+		\]
+		
+		Le symbole $\forall$ est appelé \textbf{quantificateur universel} et se lit \og \textbf{quel que soit} \fg.
+		
+		\item \textcolor{gold2}{\textbf{Quantificateur existentiel}} Pour signifier que la propriété $P(x)$ est vraie pour au moins un élément $x$ de $E$, on écrit :
+		
+		\[
+			\exists x\in E, P(x)
+		\]
+		
+		Le symbole $\exists$ est appelé \textbf{quantificateur existentiel} et se lit \og \textbf{il existe} \fg., (sous entendu : au moins un)\\
+		Lorsqu'on écrit $\exists !$, on entend \og \textbf{il existe un \textcolor{gold2}{unique}} \fg .
+	\end{itemize}
+	
+	Un énoncé mathématique, comprenant un ou plusieurs quantificateurs, et faisant intervenir une ou des variables, ainsi qu'une propriété dépendant de ce ou ces variables. Et qui peut prendre deux valeurs : Vrai (V), ou Faux (F).  Est appelée \textcolor{gold2}{\textbf{assertion}}, ou  \textcolor{gold2}{\textbf{proposition}}.
+}
+
+\Rem{
+	Les quantificateurs permettent de formuler de manière condensée certaines propriétés. 
+}
+
+
+\example 
+	L'assertion :
+	\[
+		\forall x \in \RR, \quad e^x>0
+	\]
+	
+	signifie que, pour tout réel $x$, le réel $e^x$ est strictement positif.
+
+
+\example 
+	L'assertion :
+	\[
+		\forall y \in \RR, \exists x \in \RR, \quad y = x^5 - 5x
+	\]
+	
+	signifie que, pour tout réel $y$, il existe (au moins) un réel $x$ tel que
+	\[
+		y = x^5 - 5x
+	\]
+	
+	ce que l’on peut établir au moyen d’une étude de fonction en utilisant le théorème des valeurs intermédiaires.
+
+\newpage
+
+\Rem[(IMPORTANTE : à conserver pour la relire plus tard)]{
+	On n’emploie les symboles $\forall$, et $\exists$ que dans des phrases intégralement écrites en langage quantifié. En aucun cas on ne peut mélanger quantificateur et phrase française\footnotemark : les quantificateurs ne sont pas des abréviations. Commencer une démonstration par un quantificateur est une faute grave. Si l’on veut prouver qu’une propriété est vraie pour tout réel $x$, la rédaction commence en déclarant $x$ : \og Soit $x$ dans $\RR$. \fg . On montre ensuite que la propriété désirée est vraie pour ce $x$ quelconque qu'on a choisi.
+}
+\footnotetext{À moins que vous vouliez avoir l'air d'un cuistre.}
+
+\Rem{ 
+	Attention au fait que l'ordre des quantificateurs est très important\footnotemark. Lorsque plusieurs quantificateurs apparaissent dans une proposition, on ne peut pas intervertir leur ordre sans changer (en général) le sens de la proposition. 
+}
+\footnotetext{Quel genre de cuistot sert le riz au lait avant le risotto au parmesan et aux morilles ?}
+
+\noindent Par exemple, ces deux assertions :
+\begin{equation}\label{q1}
+	\forall x \in \RR_+, \exists t \in \RR, x=t^2
+\end{equation}
+\begin{equation}\label{q2}
+	\exists t \in \RR, \forall x \in \RR_+, x=t^2
+\end{equation}
+Ne signifient pas la même chose ! (\ref{q1}) est-elle vraie ou fausse ? Et (\ref{q2}) ? Pourquoi ?
+
+
+\example 
+	Vous verrez par exemple en cours d'année, que pour une suite réelle $(u_n)_{n\in \NN}$, l'assertion \og $(u_n)_{n\in \NN}$ converge vers $l\in \RR$ \fg, est définie par :
+	\[
+		\forall \epsilon >0, \exists N \in \NN, \forall n \in \NN, \quad (n \geq N \Longrightarrow \vert u_n - l \vert \leq \epsilon)
+	\]
+
+Donnons deux illustrations de cette définition :
+
+
+\begin{center}
+
+\input{../Figures/Limite1}
+
+\input{../Figures/Limite2}
+
+\end{center}
+
+
+
+\Rem{
+	Ces schémas nous indiquent que si \og le canal est plus petit \fg, ie si on réduit la valeur de $\epsilon$,  le rang $N$ est susceptible d'augmenter\footnotemark.
+}
+\footnotetext{Mais pas forcément, de plus le rang $N$ n'est jamais unique.}
+	
+
+%%%                         Louis-Thibault GAUTHIER                       %%%

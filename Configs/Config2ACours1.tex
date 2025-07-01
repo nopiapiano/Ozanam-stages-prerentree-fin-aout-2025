@@ -1,0 +1,20 @@
+%Inverser les couleurs :
+%\pagecolor{black}\color{white}
+
+\fancypagestyle{plain}{
+	\fancyhf{} %Clear Everything.
+	\renewcommand\headrulewidth{1pt}
+	%\fancyfoot[C]{\thepage} %Page Number
+	\renewcommand{\headrule}{\color{albertBlue2}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth} %0pt for no rule, 2pt thicker etc...
+	\renewcommand{\footrule}{\color{albertBlue2}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth} %0pt for no rule, 2pt thicker etc...
+	
+	\fancyfoot[L]{\textcolor{albertBlue2}{Louis-Thibault GAUTHIER}}
+	\fancyfoot[C]{\textcolor{albertBlue2}{Page \thepage/\pageref{LastPage}}}
+	\fancyhead[L]{\textcolor{albertBlue2}{Stage OZANAM de prérentrée 2025 en CPGE deuxième année}}
+	\fancyfoot[R]{\textcolor{albertBlue2}{YouTube : ProfdeMathsaLyon}}
+	\fancyhead[C]{\textcolor{albertBlue2}{Mathématiques}}	
+	\fancyhead[R]{\textcolor{albertBlue2}{Cours 1 du jeudi 28 Août 2025}}	
+}
+	
+	
+\pagestyle{plain}

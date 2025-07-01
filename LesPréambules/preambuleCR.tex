@@ -1,0 +1,378 @@
+\documentclass[a4paper,10pt,twoside,landscape,twocolumn]{article}
+
+
+\usepackage{amssymb}
+\setlength{\columnsep}{1cm}
+\usepackage{multicol}
+\usepackage{amsthm}
+\usepackage{eurosym}
+\usepackage{graphics}
+\usepackage{amsmath}
+% For Landau's notation
+\usepackage{mismath}
+
+\usepackage{stmaryrd} % Where \llbracket and \rrbracket are defined
+
+\usepackage{parallel}
+
+\usepackage{hyperref}
+
+\let\oldfootnotemark\footnotemark
+\renewcommand{\footnotemark}{%
+	\begin{NoHyper}\oldfootnotemark\end{NoHyper}%
+}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}  
+% \usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}  
+\usepackage{pstricks-add}
+\usepackage{graphicx}
+\usepackage[cyr]{aeguill} % Guillemets en francais et autres
+\usepackage{babel,varioref,amssymb,float} % polices
+\usepackage{pgf,tikz} % permet de créer comme pstricks des figures en code LateX
+\let\clipbox\relax
+
+\usetikzlibrary{calc,decorations.pathmorphing,arrows}
+
+\usepackage{tikz-3dplot}
+
+\usepackage{vwcol}  % Pour la barre verticale
+
+
+\usepackage{pgflibraryarrows} % librairie liée à tikz
+\usepackage{pgflibrarysnakes}
+\usepackage{xcolor} % module de couleur pour tikz
+\usepackage{pst-eucl}
+\usepackage{titlesec} % Personnaliser les titres
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+
+\usepackage{amsmath,amsfonts,amssymb,theorem,graphicx,geometry}
+\geometry{top=1.8cm,left=1cm,right=1cm,bottom=1.5cm}%,marginparwidth=2cm,marginparsep=0.5cm}
+
+\usepackage{multicol}
+
+\usepackage{enumitem}
+
+\usepackage{calc,color}
+\usepackage{fancybox}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{marginnote}
+\usepackage{fontawesome}
+
+\usepackage[weather]{ifsym}
+\usepackage{pifont}
+
+\usepackage{tcolorbox}
+
+\usepackage{thmtools}
+ \usepackage[tikz]{bclogo} 
+ 
+ \usepackage{pgfplots} %Diagrammes
+ 
+ 
+ 
+% \usepackage{hyperref}
+
+
+\setlist[itemize]{label=\textbullet}
+ 
+ \usepackage[mmddyyyy]{datetime}% http://ctan.org/pkg/datetime
+ \usepackage{advdate}% http://ctan.org/pkg/advdate
+ \newdateformat{syldate}{\twodigit{\THEDAY}/\twodigit{\THEMONTH}/\THEYEAR}
+ \newsavebox{\MONDAY}\savebox{\MONDAY}{Mon}% Mon
+ \newcommand{\week}[1]{%
+ %  \cleardate{mydate}% Clear date
+ % \newdate{mydate}{\the\day}{\the\month}{\the\year}% Store date
+   \paragraph*{\kern-2ex\quad #1, \syldate{\today} - \AdvanceDate[4]\syldate{\today}:}% Set heading  \quad #1
+ %  \setbox1=\hbox{\shortdayofweekname{\getdateday{mydate}}{\getdatemonth{mydate}}{\getdateyear{mydate}}}%
+   \ifdim\wd1=\wd\MONDAY
+     \AdvanceDate[7]
+   \else
+     \AdvanceDate[7]
+   \fi%
+ }
+ 
+
+\def\marginsymbol{\protect\marginsymbolhelper}
+\def\marginsymbolhelper{\tabto*{-1cm}\makebox[0cm]{$\bullet$}\tabto*{\TabPrevPos}}
+
+\renewcommand\thesubsection{\Alph{subsection}}
+\renewcommand{\thesection}{\Roman{section}}
+%\newcommand{\NN}{\mathbb{N}}
+%\newcommand{\RR}{\mathbb{R}}
+
+% Small bullet points
+\newcommand{\smtextbullet}{\,\begin{picture}(-1,1)(-1,-3)\circle*{2}\end{picture}\ }
+
+
+%Faire des flèches avec Tikz
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+
+
+% Albert School color theme
+\definecolor{albertBlue1}{RGB}{34, 20, 81}
+\definecolor{albertBlue2}{RGB}{54, 37, 157}
+\definecolor{albertBlue3}{RGB}{173, 218, 247}
+
+\definecolor{inter}{RGB}{156, 66, 167}
+
+%%% Les couleurs %%%
+\definecolor{fondtitre}{rgb}{0.20,0.43,0.09}  % vert fonce
+\definecolor{gold}{RGB}{223,179,85}  % Gold
+%\definecolor{gold2}{RGB}{223,179,85} % Gold
+\definecolor{gold2}{RGB}{53,93,173}   % Gold2 %bleu
+\definecolor{gold3}{RGB}{255,214,100} 
+\definecolor{goldinv}{RGB}{32,76,170}
+\definecolor{bleu}{RGB}{53,93,173}  
+\definecolor{vert}{RGB}{155,205,50}  
+\definecolor{vertfoncé}{RGB}{0,128,32}  
+\definecolor{bleufoncé}{RGB}{0,32,128}  
+\definecolor{grenat}{RGB}{110,11,20}  
+\definecolor{amande}{RGB}{130,196,108} 
+\definecolor{magentapink}{RGB}{204,51,139}   
+\definecolor{glauque}{RGB}{100,155,136}   
+\definecolor{oeuf}{RGB}{239,213,178}   
+\definecolor{bisque}{RGB}{255,228,196}   
+\definecolor{inter}{RGB}{156, 66, 167}
+%\definecolor{backg}{RGB}{185,220,200}   
+%\definecolor{backg}{RGB}{215,224,240}
+\definecolor{crème}{RGB}{253,247,196}  
+\definecolor{noirleger}{RGB}{79,77,81}  
+\definecolor{marron}{RGB}{88,41,0} 
+\definecolor{gris}{RGB}{150,150,150} 
+\definecolor{rougem}{RGB}{200,0,0} 
+\definecolor{vertm}{RGB}{0,200,0} 
+\definecolor{bleum}{RGB}{0,0,200} 
+
+
+\newcommand{\isEquivTo}[1]{\underset{#1}{\sim}}
+
+\newcommand{\poubelle}[1]{} % Commande Poubelle : "\poubelle{ blabla}" et le blabla sera ignoré, même si il tient en 200 lignes
+
+% Compteur commun
+\newcounter{envcounter}
+
+% Properties
+\definecolor{propColor}{RGB}{0,128,32}
+\newcommand{\Props}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=propColor!5!white,colframe=propColor!75!black,title=Propositions \theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+
+\definecolor{Cor}{RGB}{0,96,24}
+\newcommand{\Cor}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=Cor!5!white,colframe=Cor!75!black,title=Corollary \theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+
+\newcommand{\Prop}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=propColor!5!white,colframe=propColor!75!black,title=Proposition \theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+
+% Definitions
+\definecolor{defColor}{RGB}{54, 37, 157}
+\newcommand{\Defs}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=defColor!5!white,colframe=defColor!75!black,title=Definitions \theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+\newcommand{\Def}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=defColor!5!white,colframe=defColor!75!black,title=Définition \theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+
+
+\definecolor{defpropColor}{RGB}{155,205,50}  
+\newcommand{\Defprop}[2][]{
+\refstepcounter{envcounter}
+\begin{tcolorbox}[colback=defpropColor!5!white,colframe=defpropColor!75!black,title=Définition-Proposition \theenvcounter\ #1]
+#2
+\end{tcolorbox}}
+
+
+% Theorems
+\definecolor{theoremColor}{RGB}{200,0,0} 
+\newcommand{\Thm}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=theoremColor!5!white,colframe=theoremColor!75!black,title=Théorème \theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+
+\definecolor{defRapColor}{RGB}{200,110,0} 
+\newcommand{\Rap}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=defRapColor!5!white,colframe=defRapColor!75!black,title=Rappel\theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+
+\definecolor{defremColor}{RGB}{88,41,0} 
+\newcommand{\Rem}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=defremColor!5!white,colframe=defremColor!75!black,title=Remarque \theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+
+\definecolor{delemColor}{RGB}{54, 37, 157}
+\newcommand{\Lem}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=delemColor!5!white,colframe=delemColor!75!black,title=Lemme \theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+
+
+% Exo
+\definecolor{exoColor}{RGB}{173, 218, 247}
+\newcommand{\Exo}[2][]{
+	\refstepcounter{envcounter}
+	\begin{tcolorbox}[colback=exoColor!5!white,colframe=exoColor!75!black,title=Exercise \theenvcounter\ #1]
+		#2
+\end{tcolorbox}}
+
+% Examples
+\newcommand{\example}[0]{
+	\vspace{1em}
+	{\bf Exemple :}
+}
+
+% Diverse things to highlight
+\newcommand{\highlight}[1]{
+	\vspace{1em}
+	{\bf #1}
+	\vspace{0.25em}
+	
+}
+
+\definecolor{gold}{RGB}{223,179,85}  % Gold
+
+
+	\newcommand\Mysection[1]{\color{bleu}\section[#1]{\textsc{\color{bleu}#1}}\color{black}}
+	\newcommand\Mysubsection[1]{\color{bleu}\subsection[#1]{\textsc{\color{bleu}#1}}\color{black}}
+	%\renewcommand{\thesubsubsection}{\color{gold}\arabic{gold}}
+	
+	
+	%%% Couleurs des théorèmes
+	\newtheoremstyle{thmgold}{\topsep}{\topsep}%
+	{\itshape}% Body font
+	{}% Indent amount (empty = no indent, \parindent = para indent)
+	{\scshape}% Thm head font
+	{\textcolor{gold}{.}}% Punctuation after thm head
+	{ }% Space after thm head (\newline = linebreak)
+	{\textcolor{gold}{\thmname{#1}\thmnumber{~#2}\thmnote{ (\normalfont #3)}}}% Thm head spec
+	
+	\theoremstyle{thmgold}
+	
+	% compteur d'exercices : à mettre entre \begin{exo} et \end{exo}
+	\newcounter{num}
+	\newcommand\exo{\stepcounter{num}\vspace{1em}\noindent{\textcolor{albertBlue2}{\underline{\bf\large Exercice~\thenum}}}\vspace{0.2em}}
+	
+	% compteur d'exercices : à mettre entre \begin{exo} et \end{exo}
+	\newcounter{sol}
+	\newcommand\sol{\stepcounter{sol}\vspace{1em}\noindent{\underline{\bf\large Solution~\thesol}}\vspace{0.2em}}
+	%%%
+	
+\usetikzlibrary{matrix,positioning}
+
+%titre
+\newcommand{\titre}[1]{\begin{tikzpicture}
+		\matrix [matrix of nodes]{
+			|[draw=albertBlue3,very thick,font=\Large,rounded corners,inner sep=0.2cm, fill=albertBlue3]|{\textsc{\ #1\ }}  \\
+		} ;
+\end{tikzpicture}}
+
+
+
+
+
+\newcommand{\bigslant}[2]{{\raisebox{.1em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}} % Symbole quotient oblique exemple \bigslant{\Z}{n\Z}
+\newcommand{\calG}{\mathcal{G}} % Les symboles de maths 
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\jP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\UU}{\mathbb{U}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\OFP}{(\Omega,\calF,\bbP)}
+\newcommand{\Pa}{\mathscr{P}}
+\newcommand{\Oa}{\mathscr{O}}
+\newcommand{\Ta}{\mathscr{T}}
+\newcommand{\Sa}{\mathscr{S}}
+\newcommand{\car}{\mathds{1}} %Les symboles de maths 
+%%% --------------------------------------- %%%
+
+
+
+
+
+
+\newcommand{\pifont}[1]{%
+	\marginnote{\hspace{-0cm}\scalebox{4}{\ding{#1}}}%
+}
+
+\newcommand{\fatcoeur}{%
+	\marginnote{%
+		\hspace{0cm}\scalebox{1}{\bccoeur}%
+	}%
+}
+
+
+
+
+
+
+\poubelle{
+\newcommand{\pifont}[1]{%
+	\reversemarginpar
+	\marginpar{\hspace{-0.3cm}\scalebox{4}{\ding{#1}}}%
+}
+
+
+\newcommand{\fatcoeur}{%
+	\marginnote{%
+		\hspace{-0.5cm}\scalebox{1}{\bccoeur}%
+	}%
+}
+
+\newcommand{\fatcoeur}{%
+	\marginpar[\hspace{1cm}\scalebox{2}{\bccoeur}]% left margin
+	{\hspace{1cm}\scalebox{2}{\bccoeur}}% right margin
+}
+
+
+}
+
+
+
+\usepackage[export]{adjustbox}
+\DeclareUnicodeCharacter{20AC}{\ifmmode\text{\euro}\else\euro\fi}

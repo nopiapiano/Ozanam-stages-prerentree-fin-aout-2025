@@ -1,0 +1,73 @@
+
+\begin{tikzpicture}[scale=1.2]
+	
+	% Limite l et canaux
+	\def\l{3.5}
+	\def\eps{0.3}
+	
+	% Coloration du canal
+	\fill[blue!10] (0,\l+\eps) rectangle (10,\l-\eps);
+	
+	
+	% Tracé de la limite (en couleur) et des canaux avec étiquettes sur l'axe des ordonnées
+	\draw[->, red] (0,\l) -- (10,\l);
+	\node[left, red] at (0,\l) {$l$};
+	
+	\draw[dashed] (0,\l+\eps) -- (10,\l+\eps);
+	\node[above right] at (0,\l+\eps) {$l+\varepsilon$};
+	
+	\draw[dashed] (0,\l-\eps) -- (10,\l-\eps);
+	\node[below right] at (0,\l-\eps) {$l-\varepsilon$};
+	
+	
+	
+	% Rang N à partir duquel la suite reste dans le canal
+	\def\N{5}
+	\draw[dashed, marron] (\N,0) -- (\N,6) node[above] {$N_2$};
+	
+	
+	% Axes
+	\draw[->] (-0.25,0) -- (10,0) node[below] {$n$};
+	\draw[->] (0,-0.5) -- (0,6) node[above] {$u_n$};
+	
+	
+	% Points de la suite
+	\coordinate (u1) at (1,5.3);
+	\coordinate (u2) at (2,1.8);
+	\coordinate (u3) at (3,4.5);
+	\coordinate (u4) at (4,3.9);
+	\coordinate (u5) at (5,3.2);
+	\coordinate (u6) at (6,3.8);
+	\coordinate (u7) at (7,3.3);
+	\coordinate (u8) at (8,3.6);
+	\coordinate (u9) at (9,3.25);
+	\coordinate (u10) at (10,3.35);
+	
+	% Tracé de la suite
+	\draw[thick, blue, -] (u1) -- (u2) -- (u3) -- (u4) -- (u5) -- (u6) -- (u7) -- (u8) -- (u9) -- (u10);
+	
+	% Points de la suite
+	\foreach \i in {1,...,7} {
+		\fill (u\i) circle (2pt);
+		\node[left] at (u\i) {$u_{\i}$};
+	}
+	\fill (u8) circle (2pt);
+	\node[above left] at (u8) {$u_{8}$};
+	\fill (u9) circle (2pt);
+	\node[above] at (u9) {$u_{9}$};
+	\fill (u10) circle (2pt);
+	\node[above left] at (u10) {$u_{10}$};
+	
+	% Annotations pour les epsilon (sur l'axe des ordonnées)
+	\draw[<->] (0.2,\l+\eps) -- (0.2,\l) node[midway, right] {$\varepsilon$};
+	\draw[<->] (0.2,\l) -- (0.2,\l-\eps) node[midway, right] {$\varepsilon$};
+	
+	% Légende pour N
+	\node[marron, below right] at (\N,0) {$\forall n \geq N_2, |u_n - l| \leq \varepsilon$};
+	
+	% Marquage des graduations sur l'axe des ordonnées
+	\foreach \y in {1,2,...,5} {
+		\draw (-0.1,\y) -- (0.1,\y);
+	}
+	
+\end{tikzpicture}

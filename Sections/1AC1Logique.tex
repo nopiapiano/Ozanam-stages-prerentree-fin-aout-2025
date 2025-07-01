@@ -1,0 +1,220 @@
+%%%                         Louis-Thibault GAUTHIER                       %%%
+
+
+\section{Logique}
+
+\subsection{Connecteurs logiques}
+
+
+
+Revenez 1 min à la définition \ref{Defassertion} page \pageref{Defassertion}.
+
+
+\Def[(Négation)]
+{
+	Soit $P$ et $Q$ deux propositions. \\
+	La \textbf{\textcolor{gold2}{négation}} \index{Négation} de $P$ est la proposition, notée \textbf{non $P$}, ou encore $\overline{P}$,  définie par :
+	\begin{itemize}
+		\item non $P$ est vraie lorsque $P$ est fausse.
+		\item non $P$ est fausse lorsque $P$ est vraie.
+	\end{itemize}
+}
+Donnons sa table de vérité :
+\begin{center}
+	\begin{tabular}{|c||c|}
+		\hline
+		\textbf{$P$}  & \textbf{$\overline{P}$}  \\
+		\hline
+		V & F \\
+		\hline
+		F & V \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\Def[(Et \& Ou)]
+{
+	La \textbf{\textcolor{gold2}{conjonction}} de $P$ et de $Q$ est la proposition, notée \textbf{$P$ et $Q$}, ou encore $P \land Q$, définie de la manière suivante :
+	\begin{itemize}
+		\item $P$ et $Q$ est vraie lorsque $P$ et $Q$ sont vraies.
+		\item $P$ et $Q$ est fausse lorsqu'au moins une des deux propositions est fausse.
+	\end{itemize}
+	La \textbf{\textcolor{gold2}{disjonction}}  \index{Disjonction} de $P$ et $Q$ est la proposition, notée \textbf{$P$ ou $Q$},  ou encore $P \lor Q$, définie de la manière suivante :
+	\begin{itemize}
+		\item $P$ ou $Q$ est vraie lorsque l'une au moins des deux propositions est vraie.
+		\item $P$ ou $Q$ est fausse lorsque $P$ et $Q$ sont fausses.
+	\end{itemize}
+}
+
+\newpage
+
+Leurs tables de vérité sont :
+
+\begin{center}
+	\begin{multicols}{2}
+			\begin{tabular}{|c|c||c|}
+				\hline
+				\textbf{$P$}  & \textbf{$Q$} & \textbf{$P \land Q$} \\
+				\hline
+				V & V & \\
+				\hline
+				V& F &  \\
+				\hline
+				F& V &  \\
+				\hline							
+				F& F &  \\
+				\hline
+			\end{tabular}
+			\begin{tabular}{|c|c||c|}
+				\hline
+				\textbf{$P$}  & \textbf{$Q$} & \textbf{$P \lor Q$} \\
+				\hline
+				V & V & \\
+				\hline
+				V& F &  \\
+				\hline
+				F& V &  \\
+				\hline							
+				F& F &  \\
+				\hline
+			\end{tabular}
+	\end{multicols}	 	
+\end{center}
+
+
+\subsection{Implication}
+
+
+
+
+\Def{
+	Soit $P$ et $Q$ deux propositions. \\
+	\textbf{\textcolor{gold2}{L'implication}} $P$ entraîne $Q$ est la proposition, notée \textbf{$P \Rightarrow Q$}  est définie par \textcolor{gold2}{(non $P$ ou $Q$)}. \\
+	\textbf{\textcolor{gold2}{L'équivalence}} de $P$ et de $Q$ est la proposition, notée \textbf{$P \Leftrightarrow Q$}, définie par la conjonction de $P \Rightarrow Q$ et $Q \Rightarrow P$.
+}
+
+
+\Exo{
+Donner leurs tables de vérité.
+}
+
+\begin{proof}
+	Remplissons les tableaux suivants : 
+	\begin{center}
+		\begin{tabular}{|c|c||c||c|}
+			\hline
+			\textbf{$P$}  & \textbf{$Q$} &   $\overline{P}$ &$\overline{P} \lor Q  :P \Rightarrow Q$ \\
+			\hline
+			V & V &  &\\
+			\hline
+			V& F &  & \\
+			\hline
+			F& V &  &  \\
+			\hline							
+			F& F &  & \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\begin{center}
+		\begin{tabular}{|c|c||c|c|c|c||c| }
+				\hline
+				\textbf{$P$}  & \textbf{$Q$} & $\overline{P}$ &  $\overline{Q}$  & $ P \Rightarrow Q$ &$ Q \Rightarrow P$ & $P \Leftrightarrow Q$ \\
+				\hline
+				V & V & & & & & \\
+				\hline
+				V& F & & & & &   \\
+				\hline
+				F& V   & & & &  & \\
+				\hline							
+				F& F & & & & &   \\
+				\hline
+			\end{tabular}
+	\end{center}
+\end{proof}
+
+\Def{
+	Soit $P$ et $Q$ deux propositions. 
+	\begin{itemize}
+		\item Lorsque $P \Rightarrow Q$ est vraie, on dit que $P$ est une \textcolor{gold2}{\textbf{condition suffisante}} pour avoir $Q$, et que $Q$ est une  \textcolor{gold2}{\textbf{condition nécessaire}} pour avoir $P$.
+		\item Lorsque $P \Leftrightarrow Q$ est vraie, $P$ est une  \textbf{\textcolor{gold2}{condition nécessaire et suffisante}} pour avoir $Q$.
+	\end{itemize}
+}
+
+
+\begin{multicols}{2}
+	\Def[(Autres formulations)]
+	{
+		Soit $P$ et $Q$ deux assertions. \\
+		Au lieu de dire on a  \og  $P \Rightarrow Q$ \fg, on peut dire :
+		\begin{itemize}
+			\item Pour $Q$ soit vraie, il suffit que $P$ le soit.
+			\item Pour que $P$ soit vraie, il faut que $Q$ le soit.
+			\item $P$ est une condition suffisante pour que $Q$ soit vraie.
+			\item $Q$ est une condition nécessaire pour que $P$ soit vraie.
+		\end{itemize}
+		Au lieu de dire on a  \og  $P \Leftrightarrow Q$ \fg, on peut dire :
+		\begin{itemize}
+			\item $P$ est vraie si et seulement si $Q$ l'est.
+			\item Pour que $Q$ soit vraie, il faut et il suffit que $P$ le soit.
+			\item $P$ est une condition nécessaire et suffisante pour que $Q$ soit vraie.
+		\end{itemize}
+	}
+	\Rem
+	{
+		Considérons l'implication : 
+		\begin{center}
+			Je suis à Lyon $\Longrightarrow$ Je suis en France.
+		\end{center}
+		Il est clair qu'elle est vraie, et on a :
+		\begin{itemize}
+			\item Pour être en France, il suffit d'être à Lyon.
+			\item Pour être à Lyon, il est nécessaire d'être en France.
+			\item Il est suffisant d'être à Lyon pour être en France.
+			\item Il est nécessaire d'être en France pour être à Lyon.
+		\end{itemize}
+	}
+\end{multicols}
+
+
+\subsection{Négation}
+
+
+\Prop[(Négation des propositions avec quantificateurs)]  
+{
+	Soit $P(x)$ une propriété dépendant d'un paramètre $x$, où $x$ est un élément d'un ensemble $E$. 
+	\begin{enumerate}
+		\item La négation de la proposition $\forall x \in E, P(x)$ est : $\exists x \in E, \mbox{non } P(x)$.
+		\item La négation de la proposition $\exists x \in E, P(x)$ est : $\forall x \in E, \mbox{non } P(x)$.
+	\end{enumerate}
+}
+
+\example
+	Soit $(u_n)_n$ une suite réelle. Donner la négation de la proposition suivante :
+	\[	
+		\exists M \in \RR, \forall n \in \NN, u_n \leq M
+	\]
+Cette dernière signifie que la suite  $(u_n)_n$ est bornée.
+
+\Rap
+{
+	Une proposition est fausse si et seulement si sa négation est vraie.
+}
+
+\example 
+	\begin{enumerate}
+		\item Soit $f\in \RR^{\RR}$. Que penser de l'assertion suivante (vraie, fausse ?)
+		\[	
+			\forall x \in \RR \quad \left( f(x) \geq 0\lor f(x) \leq 0 \right) \quad ?
+		\]
+		
+		\item De même, que penser de l'assertion 
+		\[	
+			\forall f\in \RR^{\RR} \left( \forall x \in \RR ;  f(x) \geq 0  \right) \lor \left( \forall x' \in \RR ; f(x') \leq 0  \right) \quad  ?
+		\]
+	\end{enumerate}
+
+
+
+
+%%%                         Louis-Thibault GAUTHIER                       %%%
+
